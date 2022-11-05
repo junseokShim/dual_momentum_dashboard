@@ -13,3 +13,4 @@ QQQ, SPY 기반의 듀얼 모멘텀 대시보드
 ### 3. 구현 현황
 #### 22.11.06
 
+<img width="1440" alt="스크린샷 2022-11-06 오전 8 26 36" src="https://user-images.githubusercontent.com/88752654/200147052-77089fb3-b355-44e8-a4bd-1e67ff7fc9ba.png">
