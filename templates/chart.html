@@ -1,0 +1,8 @@
+<div class="card">
+    <script type="text/javascript">
+        const stocks = {{ qqq | safe }};
+        const x = Object.keys(stocks['Open']);
+        const y = stocks['Open'];
+        draw_chart(x, y);
+    </script>
+</div>

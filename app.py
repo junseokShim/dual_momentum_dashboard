@@ -1,12 +1,16 @@
 from flask import Flask, request, render_template, redirect
-import sys
+from static.etf_parsing import stock_df
+import os, sys
 
 application = Flask( __name__ )
 
-@application.route("/") # html document를 response 하는 방법
-def main_page():
-    return render_template('main.html') # response hn path
 
+@application.route("/")
+def main_page():
+    qqq, spy = stock_df()
+    return render_template('main.html', 
+                            qqq = qqq,
+                            spy = spy)
 
 if __name__ == "__main__":
-    application.run(host='0.0.0.0', port=3001, debug=True)
+    application.run(host='0.0.0.0', port=3003, debug=True)
