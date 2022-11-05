@@ -16,7 +16,8 @@ def yf_to_df(df, x):
 
 def stock_df():
     x = dt.datetime.now()
-
+    
+    # define으로 관리하고 싶은데...
     qqq = yf.Ticker("QQQ")
     spy = yf.Ticker("SPY")
 
