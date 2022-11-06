@@ -28,13 +28,13 @@ def stock_df():
     return df_qqq, df_spy
 
 
-def comb(x, stock1, stock2, per1=0.5, per2=0.5):
+def comb(stock1, stock2, per1=0.5, per2=0.5):
     per_lst = [per1, per2]
 
     stock1 = pd.DataFrame(json.loads(stock1))
     stock2 = pd.DataFrame(json.loads(stock2))
 
-    df_total = (stock1*per1 + stock2*per2)/len(per_lst)
+    df_total = (stock1*per1 + stock2*per2)/2
     df_total = df_total.to_json()
     
     return df_total
