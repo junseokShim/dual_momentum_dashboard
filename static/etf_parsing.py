@@ -2,6 +2,7 @@ import yfinance as yf
 import datetime as dt
 import pandas as pd
 import numpy as np
+import json
 
 def yf_to_df(df, x):
     # S&P 500 2년간 데이터
@@ -25,3 +26,15 @@ def stock_df():
     df_spy = yf_to_df(spy, x)
 
     return df_qqq, df_spy
+
+
+def comb(x, stock1, stock2, per1=0.5, per2=0.5):
+    per_lst = [per1, per2]
+
+    stock1 = pd.DataFrame(json.loads(stock1))
+    stock2 = pd.DataFrame(json.loads(stock2))
+
+    df_total = (stock1*per1 + stock2*per2)/len(per_lst)
+    df_total = df_total.to_json()
+    
+    return df_total
